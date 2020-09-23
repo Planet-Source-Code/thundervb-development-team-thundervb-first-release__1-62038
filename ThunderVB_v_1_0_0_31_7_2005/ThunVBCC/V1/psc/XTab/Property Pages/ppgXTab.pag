@@ -1,0 +1,1001 @@
+VERSION 5.00
+Begin VB.PropertyPage ppgXTab 
+   Caption         =   "General"
+   ClientHeight    =   6090
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   6990
+   BeginProperty Font 
+      Name            =   "Tahoma"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
+   LockControls    =   -1  'True
+   PaletteMode     =   0  'Halftone
+   ScaleHeight     =   6090
+   ScaleWidth      =   6990
+   Begin VB.Frame fraTabSpecificProperties 
+      Caption         =   " Tab Specific Properties "
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1785
+      Left            =   90
+      TabIndex        =   30
+      Top             =   4170
+      Width           =   6765
+      Begin VB.TextBox txtActiveTab 
+         Height          =   285
+         Left            =   1710
+         MaxLength       =   5
+         TabIndex        =   12
+         Top             =   300
+         Width           =   1020
+      End
+      Begin VB.CommandButton cmdNext 
+         Caption         =   ">"
+         Height          =   285
+         Left            =   2970
+         TabIndex        =   14
+         Top             =   300
+         Width           =   200
+      End
+      Begin VB.CommandButton cmdPrevious 
+         Caption         =   "<"
+         Height          =   285
+         Left            =   2760
+         TabIndex        =   13
+         Top             =   300
+         Width           =   200
+      End
+      Begin VB.PictureBox picOuter 
+         Appearance      =   0  'Flat
+         ForeColor       =   &H80000008&
+         Height          =   510
+         Left            =   1710
+         ScaleHeight     =   32
+         ScaleMode       =   3  'Pixel
+         ScaleWidth      =   32
+         TabIndex        =   31
+         TabStop         =   0   'False
+         Top             =   1080
+         Width           =   510
+         Begin VB.Image imgPreview 
+            Height          =   480
+            Left            =   0
+            Top             =   0
+            Width           =   480
+         End
+      End
+      Begin VB.CommandButton cmdAssignPic 
+         Caption         =   "Assign"
+         Height          =   225
+         Left            =   2310
+         TabIndex        =   17
+         Top             =   1080
+         Width           =   735
+      End
+      Begin VB.TextBox txtTabCaption 
+         Height          =   285
+         Left            =   1710
+         MaxLength       =   255
+         TabIndex        =   16
+         Top             =   690
+         Width           =   4725
+      End
+      Begin VB.CheckBox chkTabEnabled 
+         Caption         =   "Enabled"
+         Height          =   195
+         Left            =   3450
+         TabIndex        =   15
+         Top             =   360
+         Width           =   945
+      End
+      Begin VB.CommandButton cmdRemovePic 
+         Caption         =   "Remove"
+         Height          =   225
+         Left            =   2310
+         TabIndex        =   18
+         Top             =   1350
+         Width           =   735
+      End
+      Begin VB.Label lblActiveTab 
+         AutoSize        =   -1  'True
+         Caption         =   "Active Tab:"
+         Height          =   195
+         Left            =   210
+         TabIndex        =   34
+         Top             =   345
+         Width           =   825
+      End
+      Begin VB.Label lblPicture 
+         AutoSize        =   -1  'True
+         Caption         =   "Picture:"
+         Height          =   195
+         Left            =   210
+         TabIndex        =   33
+         Top             =   1245
+         Width           =   555
+      End
+      Begin VB.Label lblTabCaption 
+         AutoSize        =   -1  'True
+         Caption         =   "Caption: "
+         Height          =   195
+         Left            =   210
+         TabIndex        =   32
+         Top             =   735
+         Width           =   660
+      End
+   End
+   Begin VB.Frame fraGeneralProperties 
+      Caption         =   " General Properties "
+      BeginProperty Font 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   3855
+      Left            =   90
+      TabIndex        =   19
+      Top             =   90
+      Width           =   6765
+      Begin VB.ComboBox cboPictureAlignment 
+         Height          =   315
+         ItemData        =   "ppgXTab.pgx":0000
+         Left            =   1710
+         List            =   "ppgXTab.pgx":0010
+         Style           =   2  'Dropdown List
+         TabIndex        =   9
+         Top             =   3330
+         Width           =   1485
+      End
+      Begin VB.ComboBox cboPictureSize 
+         Height          =   315
+         ItemData        =   "ppgXTab.pgx":004E
+         Left            =   1710
+         List            =   "ppgXTab.pgx":0058
+         Style           =   2  'Dropdown List
+         TabIndex        =   8
+         Top             =   2880
+         Width           =   1485
+      End
+      Begin VB.CheckBox chkUseMaskColor 
+         Caption         =   "Use Mask Color for Picture"
+         Height          =   195
+         Left            =   3450
+         TabIndex        =   10
+         Top             =   3420
+         Width           =   2235
+      End
+      Begin VB.CommandButton cmdSelectMaskColor 
+         Caption         =   "Select"
+         Height          =   225
+         Left            =   5700
+         TabIndex        =   11
+         Top             =   3390
+         Width           =   645
+      End
+      Begin VB.CheckBox chkShowFocusRect 
+         Caption         =   "Show Focus Rect"
+         Height          =   225
+         Left            =   1710
+         TabIndex        =   7
+         Top             =   2220
+         Width           =   1605
+      End
+      Begin VB.TextBox txtActiveTabHeight 
+         Height          =   285
+         Left            =   1710
+         MaxLength       =   5
+         TabIndex        =   3
+         Top             =   1140
+         Width           =   600
+      End
+      Begin VB.TextBox txtInActiveTabHeight 
+         Height          =   285
+         Left            =   5025
+         MaxLength       =   5
+         TabIndex        =   4
+         Top             =   1140
+         Width           =   630
+      End
+      Begin VB.TextBox txtXRadius 
+         Height          =   285
+         Left            =   1710
+         MaxLength       =   5
+         TabIndex        =   5
+         Top             =   1560
+         Width           =   600
+      End
+      Begin VB.TextBox txtYRadius 
+         Height          =   285
+         Left            =   5025
+         MaxLength       =   5
+         TabIndex        =   6
+         Top             =   1560
+         Width           =   630
+      End
+      Begin VB.ComboBox cboTabTheme 
+         Height          =   315
+         ItemData        =   "ppgXTab.pgx":006A
+         Left            =   5010
+         List            =   "ppgXTab.pgx":007D
+         Style           =   2  'Dropdown List
+         TabIndex        =   2
+         Top             =   690
+         Width           =   1365
+      End
+      Begin VB.ComboBox cboTabStyle 
+         Height          =   315
+         ItemData        =   "ppgXTab.pgx":00CA
+         Left            =   1710
+         List            =   "ppgXTab.pgx":00D4
+         Style           =   2  'Dropdown List
+         TabIndex        =   1
+         Top             =   690
+         Width           =   1485
+      End
+      Begin VB.TextBox txtTabCount 
+         Height          =   285
+         Left            =   1710
+         MaxLength       =   5
+         TabIndex        =   0
+         Top             =   270
+         Width           =   600
+      End
+      Begin VB.Label lblPictureAlignment 
+         AutoSize        =   -1  'True
+         Caption         =   "Picture Alignment:"
+         Height          =   195
+         Left            =   210
+         TabIndex        =   29
+         Top             =   3390
+         Width           =   1305
+      End
+      Begin VB.Label lblPictureSize 
+         AutoSize        =   -1  'True
+         Caption         =   "Picture Size:"
+         Height          =   195
+         Left            =   210
+         TabIndex        =   28
+         Top             =   2940
+         Width           =   885
+      End
+      Begin VB.Label lblActiveTabHeight 
+         AutoSize        =   -1  'True
+         Caption         =   "Active Tab Height:"
+         Height          =   195
+         Left            =   180
+         TabIndex        =   27
+         Top             =   1185
+         Width           =   1335
+      End
+      Begin VB.Label lblInactiveTabHeight 
+         AutoSize        =   -1  'True
+         Caption         =   "InActive Tab Height:"
+         Height          =   195
+         Left            =   3450
+         TabIndex        =   26
+         Top             =   1185
+         Width           =   1485
+      End
+      Begin VB.Label lblXRadius 
+         AutoSize        =   -1  'True
+         Caption         =   "X Radius:"
+         Height          =   195
+         Left            =   180
+         TabIndex        =   25
+         Top             =   1605
+         Width           =   675
+      End
+      Begin VB.Label lblYRadius 
+         AutoSize        =   -1  'True
+         Caption         =   "Y Radius:"
+         Height          =   195
+         Left            =   3450
+         TabIndex        =   24
+         Top             =   1605
+         Width           =   675
+      End
+      Begin VB.Label lblInfo 
+         Caption         =   "* X Radius and Y Radius apply only to  the Round Tabs Theme"
+         ForeColor       =   &H80000010&
+         Height          =   405
+         Left            =   1710
+         TabIndex        =   23
+         Top             =   1890
+         Width           =   4665
+      End
+      Begin VB.Label lblTabTheme 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Tab Theme:"
+         ForeColor       =   &H8000000D&
+         Height          =   195
+         Left            =   3450
+         TabIndex        =   22
+         Top             =   750
+         Width           =   855
+      End
+      Begin VB.Label lblTabStyle 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Tab Style:"
+         ForeColor       =   &H8000000D&
+         Height          =   195
+         Left            =   180
+         TabIndex        =   21
+         Top             =   750
+         Width           =   735
+      End
+      Begin VB.Label lblTabCount 
+         AutoSize        =   -1  'True
+         Caption         =   "Tab Count:"
+         Height          =   195
+         Left            =   180
+         TabIndex        =   20
+         Top             =   315
+         Width           =   810
+      End
+   End
+End
+Attribute VB_Name = "ppgXTab"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = True
+'ppgXTab:  Property Page for the Control
+
+Option Explicit
+
+Private m_bIgnoreChanges As Boolean      'used to prevent Setting of "Changed" flag or property page
+
+
+
+'=====Event Handlers==================================================================================================
+
+Private Sub cboPictureAlignment_Click()
+    '<EhHeader>
+    On Error GoTo cboPictureAlignment_Click_Err
+    '</EhHeader>
+  If Not m_bIgnoreChanges Then
+    SelectedControls(0).PictureAlign = cboPictureAlignment.ListIndex      'if the ignore flag is off then set the Pic Alignment
+  End If
+    '<EhFooter>
+    Exit Sub
+
+cboPictureAlignment_Click_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.cboPictureAlignment_Click " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub cboPictureSize_Click()
+    '<EhHeader>
+    On Error GoTo cboPictureSize_Click_Err
+    '</EhHeader>
+  If Not m_bIgnoreChanges Then
+    SelectedControls(0).PictureSize = cboPictureSize.ListIndex      'if the ignore flag is off then set the Pic Size
+  End If
+    '<EhFooter>
+    Exit Sub
+
+cboPictureSize_Click_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.cboPictureSize_Click " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub cboTabStyle_Click()
+    '<EhHeader>
+    On Error GoTo cboTabStyle_Click_Err
+    '</EhHeader>
+  If Not m_bIgnoreChanges Then
+    SelectedControls(0).TabStyle = cboTabStyle.ListIndex       'if the ignore flag is off then set the TabStyle
+  End If
+    '<EhFooter>
+    Exit Sub
+
+cboTabStyle_Click_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.cboTabStyle_Click " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub cboTabTheme_Click()
+    '<EhHeader>
+    On Error GoTo cboTabTheme_Click_Err
+    '</EhHeader>
+  If Not m_bIgnoreChanges Then
+    SelectedControls(0).TabTheme = cboTabTheme.ListIndex 'if the ignore flag is off then set the Tab Theme
+  End If
+    '<EhFooter>
+    Exit Sub
+
+cboTabTheme_Click_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.cboTabTheme_Click " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub chkShowFocusRect_Click()
+    '<EhHeader>
+    On Error GoTo chkShowFocusRect_Click_Err
+    '</EhHeader>
+  If Not m_bIgnoreChanges Then Changed = True     'if the ignore flag is off, indicate some property has changed
+    '<EhFooter>
+    Exit Sub
+
+chkShowFocusRect_Click_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.chkShowFocusRect_Click " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub chkTabEnabled_Click()
+    '<EhHeader>
+    On Error GoTo chkTabEnabled_Click_Err
+    '</EhHeader>
+  If Not m_bIgnoreChanges Then Changed = True     'if the ignore flag is off, indicate some property has changed
+    '<EhFooter>
+    Exit Sub
+
+chkTabEnabled_Click_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.chkTabEnabled_Click " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub chkUseMaskColor_Click()
+    '<EhHeader>
+    On Error GoTo chkUseMaskColor_Click_Err
+    '</EhHeader>
+  If Not m_bIgnoreChanges Then
+    If chkUseMaskColor.Value = vbChecked Then
+      SelectedControls(0).UseMaskColor = True
+      cmdSelectMaskColor.Enabled = True
+    Else
+      SelectedControls(0).UseMaskColor = False
+      cmdSelectMaskColor.Enabled = False
+    End If
+  End If
+    '<EhFooter>
+    Exit Sub
+
+chkUseMaskColor_Click_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.chkUseMaskColor_Click " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub cmdAssignPic_Click()
+    '<EhHeader>
+    On Error GoTo cmdAssignPic_Click_Err
+    '</EhHeader>
+  Dim sTmp As String
+  
+  sTmp = g_pShowFileOpenDialog(GetActiveWindow(), , "Image Files|*.jpg;*.gif;*.bmp;*.ico|All Files|*.*|")
+  If sTmp <> "" Then
+    
+    'done to destroy the resource
+    Set SelectedControls(0).TabPicture(SelectedControls(0).ActiveTab) = Nothing
+    
+    'done to destroy the resource
+    Set imgPreview.Picture = Nothing
+    
+    Set imgPreview.Picture = LoadPicture(sTmp)  'load the whole picture from the file and store it into the tab's picture property
+    'Set SelectedControls(0).TabPicture(SelectedControls(0).ActiveTab) = LoadPicture(sTmp)  'load the whole picture from the file and store it into the tab's picture property
+    
+    Set SelectedControls(0).TabPicture(SelectedControls(0).ActiveTab) = imgPreview.Picture
+    
+    'Set imgPreview.Picture = SelectedControls(0).TabPicture(SelectedControls(0).ActiveTab)
+    
+    Call pAlignImage
+    
+    Refresh    'donno but must refresh or else sometimes the picture goes away :(
+    
+  End If
+
+    '<EhFooter>
+    Exit Sub
+
+cmdAssignPic_Click_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.cmdAssignPic_Click " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub cmdNext_Click()
+    '<EhHeader>
+    On Error GoTo cmdNext_Click_Err
+    '</EhHeader>
+  Dim iTmp As Integer
+  
+  iTmp = SelectedControls(0).ActiveTab
+  
+  If iTmp < SelectedControls(0).TabCount - 1 Then
+    
+    If Changed Then
+      Call pSaveOnlyActiveTabControlProperties   'save existing props first
+    End If
+    
+    SelectedControls(0).ActiveTab = iTmp + 1
+    Call pGetAndFillPropValues
+  End If
+    '<EhFooter>
+    Exit Sub
+
+cmdNext_Click_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.cmdNext_Click " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub cmdPrevious_Click()
+    '<EhHeader>
+    On Error GoTo cmdPrevious_Click_Err
+    '</EhHeader>
+  
+  If SelectedControls(0).ActiveTab > 0 Then
+    
+    If Changed Then
+      Call pSaveOnlyActiveTabControlProperties   'save existing props first
+    End If
+    
+    SelectedControls(0).ActiveTab = SelectedControls(0).ActiveTab - 1
+    Call pGetAndFillPropValues
+  End If
+    '<EhFooter>
+    Exit Sub
+
+cmdPrevious_Click_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.cmdPrevious_Click " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub cmdRemovePic_Click()
+    '<EhHeader>
+    On Error GoTo cmdRemovePic_Click_Err
+    '</EhHeader>
+  Set SelectedControls(0).TabPicture(SelectedControls(0).ActiveTab) = Nothing
+  Set imgPreview.Picture = Nothing
+    '<EhFooter>
+    Exit Sub
+
+cmdRemovePic_Click_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.cmdRemovePic_Click " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub cmdSelectMaskColor_Click()
+    '<EhHeader>
+    On Error GoTo cmdSelectMaskColor_Click_Err
+    '</EhHeader>
+  On Error Resume Next
+  
+  'Swicth to Color's Property Page
+  SendKeys "^+{Tab}"
+    '<EhFooter>
+    Exit Sub
+
+cmdSelectMaskColor_Click_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.cmdSelectMaskColor_Click " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub PropertyPage_ApplyChanges()
+    '<EhHeader>
+    On Error GoTo PropertyPage_ApplyChanges_Err
+    '</EhHeader>
+  If pValidatePropValues Then
+    Call pSavePropValues
+    Changed = False
+  Else
+    Changed = True
+  End If
+    '<EhFooter>
+    Exit Sub
+
+PropertyPage_ApplyChanges_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.PropertyPage_ApplyChanges " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub PropertyPage_SelectionChanged()
+    '<EhHeader>
+    On Error GoTo PropertyPage_SelectionChanged_Err
+    '</EhHeader>
+  Call pGetAndFillPropValues
+    '<EhFooter>
+    Exit Sub
+
+PropertyPage_SelectionChanged_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.PropertyPage_SelectionChanged " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub txtActiveTab_Change()
+    '<EhHeader>
+    On Error GoTo txtActiveTab_Change_Err
+    '</EhHeader>
+  If Not m_bIgnoreChanges Then Changed = True     'if the ignore flag is off, indicate some property has changed
+    '<EhFooter>
+    Exit Sub
+
+txtActiveTab_Change_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.txtActiveTab_Change " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub txtActiveTabHeight_Change()
+    '<EhHeader>
+    On Error GoTo txtActiveTabHeight_Change_Err
+    '</EhHeader>
+  If Not m_bIgnoreChanges Then Changed = True     'if the ignore flag is off, indicate some property has changed
+    '<EhFooter>
+    Exit Sub
+
+txtActiveTabHeight_Change_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.txtActiveTabHeight_Change " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub txtInActiveTabHeight_Change()
+    '<EhHeader>
+    On Error GoTo txtInActiveTabHeight_Change_Err
+    '</EhHeader>
+  If Not m_bIgnoreChanges Then Changed = True     'if the ignore flag is off, indicate some property has changed
+    '<EhFooter>
+    Exit Sub
+
+txtInActiveTabHeight_Change_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.txtInActiveTabHeight_Change " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub txtTabCaption_Change()
+    '<EhHeader>
+    On Error GoTo txtTabCaption_Change_Err
+    '</EhHeader>
+  If Not m_bIgnoreChanges Then Changed = True     'if the ignore flag is off, indicate some property has changed
+    '<EhFooter>
+    Exit Sub
+
+txtTabCaption_Change_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.txtTabCaption_Change " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub txtTabCount_Change()
+    '<EhHeader>
+    On Error GoTo txtTabCount_Change_Err
+    '</EhHeader>
+  If Not m_bIgnoreChanges Then Changed = True     'if the ignore flag is off, indicate some property has changed
+    '<EhFooter>
+    Exit Sub
+
+txtTabCount_Change_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.txtTabCount_Change " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub txtXRadius_Change()
+    '<EhHeader>
+    On Error GoTo txtXRadius_Change_Err
+    '</EhHeader>
+  If Not m_bIgnoreChanges Then Changed = True     'if the ignore flag is off, indicate some property has changed
+    '<EhFooter>
+    Exit Sub
+
+txtXRadius_Change_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.txtXRadius_Change " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub txtYRadius_Change()
+    '<EhHeader>
+    On Error GoTo txtYRadius_Change_Err
+    '</EhHeader>
+  If Not m_bIgnoreChanges Then Changed = True     'if the ignore flag is off, indicate some property has changed
+    '<EhFooter>
+    Exit Sub
+
+txtYRadius_Change_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.txtYRadius_Change " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+'=====================================================================================================================
+
+
+'====Private Functions================================================================================================
+Private Sub pAlignImage()
+    'do adjustments
+    '<EhHeader>
+    On Error GoTo pAlignImage_Err
+    '</EhHeader>
+    If imgPreview.Width < 32 Then
+      imgPreview.Stretch = False
+      imgPreview.Left = 16 - imgPreview.Width / 2
+    Else
+      imgPreview.Stretch = True
+      imgPreview.Width = 32
+      imgPreview.Left = 0
+    End If
+    
+    If imgPreview.Height < 32 Then
+      imgPreview.Stretch = False
+      imgPreview.Top = 16 - imgPreview.Height / 2
+    Else
+      imgPreview.Stretch = True
+      imgPreview.Height = 32
+      imgPreview.Top = 0
+    End If
+    '<EhFooter>
+    Exit Sub
+
+pAlignImage_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.pAlignImage " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+
+Private Function pValidatePropValues() As Boolean
+    '<EhHeader>
+    On Error GoTo pValidatePropValues_Err
+    '</EhHeader>
+  Dim oCtl As Control
+  m_bIgnoreChanges = True
+  
+  For Each oCtl In Controls
+    If TypeOf oCtl Is TextBox Then
+      If oCtl.Name <> "txtTabCaption" Then
+        oCtl.Text = Trim$(oCtl.Text)
+        
+        If IsNumeric(oCtl.Text) Then
+          If CLng(oCtl.Text) < 0 Then
+            oCtl.SetFocus
+            MsgBox "Enter a value between 1 and 32767 in '" & Mid$(oCtl.Name, 4) & "' text box.", vbInformation
+            m_bIgnoreChanges = False
+            Exit Function
+          ElseIf CLng(oCtl.Text) > 32767 Then
+            oCtl.SetFocus
+            MsgBox "Enter a value between 1 and 32767 in '" & Mid$(oCtl.Name, 4) & "' text box.", vbInformation
+            m_bIgnoreChanges = False
+            Exit Function
+          End If
+        Else
+          oCtl.SetFocus
+          MsgBox "Enter a value between 1 and 32767 in active text box.", vbInformation
+          m_bIgnoreChanges = False
+          Exit Function
+        End If
+      End If
+    End If
+  Next
+  
+  If CLng(txtActiveTab.Text) >= SelectedControls(0).TabCount Then
+    txtActiveTab.SetFocus
+    MsgBox "Active tab should be a number between 1 to TabCount -1", vbInformation, "Tab Count"
+    m_bIgnoreChanges = False
+    Exit Function
+  End If
+  
+  
+  m_bIgnoreChanges = False
+  
+  pValidatePropValues = True
+    '<EhFooter>
+    Exit Function
+
+pValidatePropValues_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.pValidatePropValues " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Function
+
+Private Sub pSavePropValues()
+    '<EhHeader>
+    On Error GoTo pSavePropValues_Err
+    '</EhHeader>
+  With SelectedControls(0)
+    '.bIgnoreRedraw = True    'was trying to prevent rerdraw as many properties are being changed...
+                              'but can not access friend functions in property pages
+                              'so dropped the idea. But left it in the place as there can
+                              'be some other way of doing it.
+    
+    .TabCount = txtTabCount.Text
+    
+    Call pSaveOnlyActiveTabControlProperties
+   
+    '.TabStyle = cboTabStyle.ListIndex
+    
+    'update the theme only if its different than the current theme
+    'If Not .TabTheme = cboTabTheme.ListIndex Then
+    '  .TabTheme = cboTabTheme.ListIndex
+    'End If
+    
+    .ActiveTabHeight = txtActiveTabHeight.Text
+    .InActiveTabHeight = txtInActiveTabHeight.Text
+    .XRadius = txtXRadius.Text
+    .YRadius = txtYRadius.Text
+    
+    .ShowFocusRect = IIf(chkShowFocusRect.Value = vbChecked, True, False)
+    
+    '.bIgnoreRedraw = False
+    '.pRefresh
+  End With
+    '<EhFooter>
+    Exit Sub
+
+pSavePropValues_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.pSavePropValues " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+Private Sub pGetAndFillPropValues()
+    '<EhHeader>
+    On Error GoTo pGetAndFillPropValues_Err
+    '</EhHeader>
+  m_bIgnoreChanges = True
+  
+  With SelectedControls(0)
+    txtTabCount.Text = .TabCount
+    txtActiveTab.Text = .ActiveTab
+    txtTabCaption.Text = .TabCaption(.ActiveTab)
+    
+    If .TabPicture(.ActiveTab) Is Nothing Then
+      imgPreview.Picture = Nothing
+      cmdRemovePic.Enabled = False
+    Else
+      imgPreview.Picture = .TabPicture(.ActiveTab)
+      cmdRemovePic.Enabled = True
+    End If
+    
+    Call pAlignImage
+    
+    chkTabEnabled.Value = IIf(.TabEnabled(.ActiveTab), vbChecked, vbUnchecked)
+   
+    cboTabStyle.ListIndex = .TabStyle
+    cboTabTheme.ListIndex = .TabTheme
+    
+    txtActiveTabHeight.Text = .ActiveTabHeight
+    txtInActiveTabHeight.Text = .InActiveTabHeight
+    txtXRadius.Text = .XRadius
+    txtYRadius.Text = .YRadius
+    
+    chkShowFocusRect.Value = IIf(.ShowFocusRect, vbChecked, vbUnchecked)
+    If .UseMaskColor Then
+      chkUseMaskColor.Value = vbChecked
+      cmdSelectMaskColor.Enabled = True
+    Else
+      chkUseMaskColor.Value = vbUnchecked
+      cmdSelectMaskColor.Enabled = False
+    End If
+    chkUseMaskColor.Value = IIf(.UseMaskColor, vbChecked, vbUnchecked)
+    cboPictureSize.ListIndex = .PictureSize
+    cboPictureAlignment.ListIndex = .PictureAlign
+    
+  End With
+  m_bIgnoreChanges = False
+    '<EhFooter>
+    Exit Sub
+
+pGetAndFillPropValues_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.pGetAndFillPropValues " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+Private Sub pSaveOnlyActiveTabControlProperties()
+    '<EhHeader>
+    On Error GoTo pSaveOnlyActiveTabControlProperties_Err
+    '</EhHeader>
+    With SelectedControls(0)
+      '.bIgnoreRedraw = True    'was trying to prevent rerdraw as many properties are being changed...
+                                'but can not access friend functions in property pages
+                                'so dropped the idea. But left it in the place as there can
+                                'be some other way of doing it.
+      
+      .TabCaption(.ActiveTab) = txtTabCaption.Text
+      
+      'Picture already set
+      'If Not imgPreview.Picture Is Nothing Then
+      '  Set .TabPicture(.ActiveTab) = LoadPicture(imgPreview.Tag, vbLPCustom, , 16, 16)
+      'Else
+      '  Set .TabPicture(.ActiveTab) = Nothing
+      'End If
+      
+      .TabEnabled(.ActiveTab) = IIf(chkTabEnabled.Value = vbChecked, True, False)
+      '.bIgnoreRedraw = False
+      '.pRefresh
+    End With
+    '<EhFooter>
+    Exit Sub
+
+pSaveOnlyActiveTabControlProperties_Err:
+    MsgBox Err.Description & vbCrLf & _
+           "in ThunVBCC_v1_0.ppgXTab.pSaveOnlyActiveTabControlProperties " & _
+           "at line " & Erl
+    Resume Next
+    '</EhFooter>
+End Sub
+
+'=====================================================================================================================

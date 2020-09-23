@@ -1,0 +1,12 @@
+
+SaveSetting "ThunderVB","pl_" & plugin, Key, Data
+pl_ThunderAsm
+
+ThunderVB?,pl_ThunderAsm?,set_Paths_txtMasm?,\bin\ml.exe;ThunderVB?,pl_ThunderAsm?,set_Paths_txtCCompiler?,\cpp_comp\cl.exe;ThunderVB?,pl_ThunderAsm?,set_Paths_txtCCompiler?,\cpp_comp\cl.exe;ThunderVB?,pl_ThunderAsm?,set_Paths_txtLibFiles?,\;ThunderVB?,pl_ThunderAsm?,set_Paths_txtIncFiles?,\
+
+set_Paths_txtMasm
+set_Paths_txtCCompiler
+set_Paths_txtLibFiles
+set_Paths_txtIncFiles
+
+;;;

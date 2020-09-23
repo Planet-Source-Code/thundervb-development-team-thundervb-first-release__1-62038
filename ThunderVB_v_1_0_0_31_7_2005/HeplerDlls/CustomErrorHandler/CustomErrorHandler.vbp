@@ -1,0 +1,66 @@
+Type=OleDll
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\WINDOWS\system32\Stdole2.tlb#OLE Automation
+Reference=*\G{45B47BCC-D537-493A-B48C-92D045F72B16}#1.1#0#..\..\..\..\..\..\Program Files\ThunderVB v1.0.0 beta9\ThunderVB_bin\dlls\ThunderVB_pl_HookSys_v1_0_beta3.dll#ThunderVB_pl_HookSys
+Reference=*\G{A149A4B0-DDF8-461D-B733-C648FCBD5A16}#2.0#0#..\..\..\..\..\..\Program Files\ThunderVB v1.0.0 beta9\ThunderVB_bin\dlls\ThunderVB_pl_LogSys_v1_0.dll#ThunderVB_pl_LogSys
+Reference=*\G{D4575622-4160-4FBE-8206-C7EF39D9E8B6}#1.1#0#..\..\..\..\..\..\WINDOWS\system32\WinApiForVb.tlb#WinApi For VB type library
+Reference=*\G{3983FDDB-02ED-44D7-A2F9-559C893E0779}#2.0#0#..\..\..\..\..\..\Program Files\ThunderVB v1.0.0 beta9\ThunderVB_bin\dlls\ThunderVB_pl_GPFSys_v1_0.dll#ThunderVB_pl_GPFSys_v1_0
+Class=clsExp; classes\clsExp.cls
+Module=ErrorHanlder_asm; modules\ErrorHanlder_asm.bas
+Module=ErrorHanlder_vb; modules\ErrorHanlder_vb.bas
+Module=modLog; ..\..\Shared\modules\modLog.bas
+Module=minidump; modules\mdump.bas
+Module=modEip2Mod; ..\..\Shared\modules\eip2mod\modEip2Mod.bas
+Startup="(None)"
+HelpFile=""
+Title="Project1"
+ExeName32="CustomErrorHandler_asmon.dll"
+Path32="..\..\bin\dlls"
+Command32=""
+Name="prjVBErrRepl"
+HelpContextID="0"
+CompatibleMode="2"
+CompatibleEXE32="interface\CustomErrorHandler_interface_v1_2.dll"
+VersionCompatible32="1"
+MajorVer=1
+MinorVer=0
+RevisionVer=0
+AutoIncrementVer=0
+ServerSupportFiles=0
+VersionCompanyName="KorDuS"
+CompilationType=0
+OptimizationType=0
+FavorPentiumPro(tm)=0
+CodeViewDebugInfo=-1
+NoAliasing=0
+BoundsCheck=0
+OverflowCheck=0
+FlPointCheck=0
+FDIVCheck=0
+UnroundedFP=0
+StartMode=1
+Unattended=0
+Retained=0
+ThreadPerObject=0
+MaxNumberOfThreads=1
+
+[pl_ThunderDll]
+set_txtBaseAddress=11000000
+set_chbUsePreLoader=0
+set_chbFullLoading=0
+set_chbDebugPreLoader=0
+set_txtEntryPoint=DllMain
+set_chbLinkAsDLL=0
+set_chbExportSymbols=0
+set_ctlExport=
+set_chbBPSubMain=0
+set_chbBPCallThunRTMain=0
+set_chbBPPreLoader=0
+set_chbCallMyDllMain=0
+set_chbCompileDll=0
+
+[pl_ThunderAsm]
+set_ASM_FixASMListings=0
+
+[pl_ThunderIDE+]
+set_C_chbCColoring=1
+set_ASM_chbAsmColoring=1

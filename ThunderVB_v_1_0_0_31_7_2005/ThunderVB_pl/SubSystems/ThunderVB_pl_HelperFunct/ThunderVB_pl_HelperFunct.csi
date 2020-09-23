@@ -1,0 +1,16 @@
+[History]
+B0=ThunderVB_pl_HelperFunct/modFileIO/FileExist
+B1=ThunderVB_pl_HelperFunct/modTempHacks/ErrorBox
+B2=ThunderVB_pl_HelperFunct/modTempHacks/WarnBox
+B3=ThunderVB_pl_HelperFunct/modTempHacks/LogMsg
+B4=ThunderVB_pl_HelperFunct/cDeclaresPub/LoadFile
+B5=ThunderVB_pl_HelperFunct/modSharedPriv
+B6=ThunderVB_pl_HelperFunct/modSharedPriv/DebugMode
+B7=ThunderVB_pl_HelperFunct/cDeclaresPub/CrLf
+B8=ThunderVB_pl_HelperFunct/cDeclaresPub/RemFisrtWord
+B9=ThunderVB_pl_HelperFunct/cDeclaresPub/RemFirstWordWithSpace
+B10=ThunderVB_pl_HelperFunct/modStringFunct/GetFirstWord
+B11=ThunderVB_pl_HelperFunct/modStringFunct/RemFirstWordWithSpace
+B12=ThunderVB_pl_HelperFunct/cDeclaresPub/GetFirstWordWithSpace
+B13=ThunderVB_pl_HelperFunct/cDeclaresPub/GetAllWordsToArr
+B14=ThunderVB_pl_HelperFunct/modStringFunct/GetAllWordsToArr

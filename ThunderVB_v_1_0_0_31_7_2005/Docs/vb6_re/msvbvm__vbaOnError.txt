@@ -1,0 +1,35 @@
+Function :
+__imp____vbaOnError : set error handling mode 
+
+params : 1 , int 32 bit signed , seems to be an enum
+
+enum vbaOnError_mode 
+	resume_next=-1
+	goto_0=0
+	goto_labelx=x where x is diferent than 0 and it is positive 
+end enum
+
+-how seh works on vb ?
+well , it is simple *couh*
+
+Here is what i know so far:
+vb keeps some structures for every function that has exeption handling
+handlers.The info contains a list with label to all lines (vb code lines)
+a list with labels to error handler and more.For more info look HowSehWorks_diss.txt
+it is a listing of a simple sub main , comented and with labels renamed
+
+-Why code using Error handling is slooowww?
+Hmm , that's a good one :
+a) Because of vb error handling way the compiler cannot optimise your code betwen lines (heh..).
+   This means that things even the simplest optimisations (like register caching) can't be done ;)
+
+b) Because of vb error handling way for each line that executes there is some overhead , usualy 
+   small..
+
+solutions:
+
+Avoid using for loops with error hnadling .. i don't know but it could be possible that the
+index will be regcached if not using error handling (maby not :P).Generaly avoid using code
+that repeats with error handling.
+
+..Use an other compiler :P

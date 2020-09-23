@@ -1,0 +1,55 @@
+Type=OleDll
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\..\WINDOWS\system32\Stdole2.tlb#OLE Automation
+Reference=*\G{3C8FBACF-3AE6-4CE5-A738-FE4D3FA981DE}#2.1#0#..\..\..\bin\dlls\ThunderVB_pl_HelperFunct_v1_0_beta2.dll#ThunderVB_pl_HelperFunct
+Reference=*\G{D4575622-4160-4FBE-8206-C7EF39D9E8B6}#1.1#0#..\..\..\..\..\..\..\WINDOWS\system32\WinApiForVb.tlb#WinApi For VB type library
+Reference=*\G{3181A65A-CC39-4CDE-A4DF-2E889E6F1AF1}#1.51#0#..\..\..\..\..\tl_ole\olelib.tlb#Edanmo's OLE interfaces & functions v1.81
+Reference=*\G{C88FCAC2-DE90-11D3-9876-8517F6B99C68}#1.6#0#..\..\..\..\..\tl_ole\Implements\olelib2.tlb#Edanmo's OLE interfaces for Implements v1.51
+Reference=*\G{73E8CD71-7860-4573-97D1-C106736139BE}#1.4#0#..\..\..\bin\dlls\CustomErrorHandler_asmon.dll#prjVBErrRepl
+Class=cDeclaresPub; classes\cDeclaresPub.cls
+Class=cTypePub; classes\cTypePub.cls
+Module=modTempHacks; modules\modTempHacks.bas
+Class=clsSimpleXOR; classes\clsSimpleXOR.cls
+Module=modArithComp; modules\modArithComp.bas
+Class=cResFile; classes\cResFile_v1_1.cls
+Module=modResFileIO; modules\resFileIO_v_1_1.bas
+Module=modSharedConsts; ..\..\..\Shared\modules\modSharedConsts.bas
+Module=modSharedPriv; ..\..\..\Shared\modules\modSharedPriv.bas
+Startup="(None)"
+HelpFile=""
+Title="ThunderVB_pl_ResSys"
+ExeName32="ThunderVB_pl_ResSys_v1_0.dll"
+Path32="..\..\..\bin\dlls"
+Command32=""
+Name="ThunderVB_pl_ResSys_v1_0"
+HelpContextID="0"
+CompatibleMode="2"
+CompatibleEXE32="interface\ThunderVB_pl_ResSys_v1_0_interface_final.dll"
+VersionCompatible32="1"
+MajorVer=1
+MinorVer=0
+RevisionVer=0
+AutoIncrementVer=0
+ServerSupportFiles=0
+VersionCompanyName="KorDuS"
+CompilationType=0
+OptimizationType=0
+FavorPentiumPro(tm)=0
+CodeViewDebugInfo=-1
+NoAliasing=0
+BoundsCheck=0
+OverflowCheck=0
+FlPointCheck=0
+FDIVCheck=0
+UnroundedFP=0
+StartMode=1
+Unattended=-1
+Retained=0
+ThreadPerObject=0
+MaxNumberOfThreads=1
+DebugStartupOption=0
+
+[MS Transaction Server]
+AutoRefresh=1
+
+[CodeSMART]
+Task_UID=24_03_05_23_33_10
