@@ -1,0 +1,16 @@
+[History]
+B0=ThunIDE/modSettings/Let_ASM
+B1=ThunIDE/modSettings/Get_ASM
+B2=ThunIDE/modInit/on_startup
+B3=ThunIDE/modInit
+B4=ThunIDE/modAsmColor/Inline
+B5=ThunIDE/modAsmColor/InitAsmColorHook
+B6=ThunIDE/modIntelliAsm/GetCurContext
+B7=ThunIDE/ColorList/lstCol_Click
+B8=ThunIDE/modAsmColor/KillAsmColorHook
+B9=ThunIDE/modSettings/Get_C
+B10=ThunIDE/modSettings/Let_C
+B11=ThunIDE/modInit/on_termination
+B12=ThunIDE/plugin/ThunderVB_pl_int_OnGuiUnLoad
+B13=ThunIDE/plugin/ThunderVB_pl_int_OnStartUp
+B14=ThunIDE/Module1/on_startup

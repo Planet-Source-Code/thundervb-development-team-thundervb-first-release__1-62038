@@ -1,0 +1,16 @@
+[History]
+B0=ThunderVB_pl/frmPlugIn/isButton1_Click
+B1=ThunderVB_pl/modLowLevel/BstrToAnsi
+B2=ThunderVB_pl/ThunderVB_base/ShowSingleConfigForm
+B3=ThunderVB_pl/frmTestWindow
+B4=ThunderVB_pl/frmTestWindow/ShowForm
+B5=ThunderVB_pl/frmPlugIn/List1_Click
+B6=ThunderVB_pl/frmPlugIn/cmbLang_Change
+B7=ThunderVB_pl/frmPlugIn
+B8=ThunderVB_pl/ThunderVB_base/DeleteSettingGlobal
+B9=ThunderVB_pl/frmPlugIn/Form_Load
+B10=ThunderVB_pl/modCPHook/RemoveCPH
+B11=ThunderVB_pl/modCPHook/CallAft
+B12=ThunderVB_pl/modCPHook/CreateProcess_Hook
+B13=ThunderVB_pl/modPublic/SetFunctionLine
+B14=ThunderVB_pl/ThunderVB_base/SetFunctionLine

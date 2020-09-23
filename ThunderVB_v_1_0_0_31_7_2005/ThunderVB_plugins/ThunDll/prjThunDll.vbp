@@ -1,0 +1,79 @@
+Type=OleDll
+Reference=*\G{6DC99FC3-77F8-459F-81B1-719F8C1934A0}#2.0#0#..\..\bin\dlls\ThunderVB_pl_interfaces_v1_0.dll#ThunderVB_pl_if
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\WINDOWS\system32\Stdole2.tlb#OLE Automation
+Reference=*\G{EF404E00-EDA6-101A-8DAF-00DD010F7EBB}#5.3#0#..\..\..\..\..\..\Program Files\Microsoft Visual Studio\VB98\VB6EXT.OLB#Microsoft Visual Basic 6.0 Extensibility
+Reference=*\G{880B3A8F-BE64-4D89-8ED8-13D41F43851E}#7.0#0#..\..\bin\ThunderVB_v1_0_0.dll#Thunder VB VB6 Addin beta 6:2
+Reference=*\G{3983FDDB-02ED-44D7-A2F9-559C893E0779}#1.0#0#..\..\bin\dlls\ThunderVB_pl_GPFSys_v1_0.dll#ThunderVB_pl_GPFSys
+Reference=*\G{3C8FBACF-3AE6-4CE5-A738-FE4D3FA981DE}#2.2#0#..\..\bin\dlls\ThunderVB_pl_HelperFunct_v1_0.dll#ThunderVB_pl_HelperFunct
+Reference=*\G{A149A4B0-DDF8-461D-B733-C648FCBD5A16}#2.0#0#..\..\bin\dlls\ThunderVB_pl_LogSys_v1_0.dll#ThunderVB_pl_LogSys
+Reference=*\G{108425F6-0B5D-45E7-BBFA-ECA46E21FA5F}#9.0#0#..\..\bin\dlls\ThunderVB_pl_ResSys_v1_0.dll#ThunderVB_pl_ResSys_v1_0
+Object={972B81FA-2CBA-47A4-9D2B-259A900985D0}#25.1#0; ThunVBCC_v1_0.ocx
+Object={831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0; MSCOMCTL.OCX
+Module=modSettings; bas\modSettings.bas
+Module=modThunDll; bas\modThunDll.bas
+Form=gui\frmDllMain.frm
+Form=gui\frmIn.frm
+Class=plugin; cls\plugin.cls
+Class=clsCpHook; cls\clsCpHook.cls
+Module=modSettingsControls; ..\_common\modSettingsControls.bas
+Module=modSharedPriv; ..\..\Shared\modules\modSharedPriv.bas
+UserControl=..\..\Shared\Controls\ExportList.ctl
+Module=modLog; ..\..\Shared\modules\modLog.bas
+Startup="(None)"
+HelpFile=""
+Title="prjThunDll"
+ExeName32="ThunDll.dll"
+Path32="..\..\bin\plugins"
+Command32=""
+Name="ThunDll"
+HelpContextID="0"
+CompatibleMode="0"
+CompatibleEXE32="..\..\thun\ThunderVB_plugined_6_12_2004\bin\plugins\ThunDll.dll"
+MajorVer=1
+MinorVer=0
+RevisionVer=0
+AutoIncrementVer=0
+ServerSupportFiles=0
+VersionCompanyName="Blaheta"
+CompilationType=0
+OptimizationType=0
+FavorPentiumPro(tm)=0
+CodeViewDebugInfo=-1
+NoAliasing=0
+BoundsCheck=0
+OverflowCheck=-1
+FlPointCheck=-1
+FDIVCheck=-1
+UnroundedFP=0
+StartMode=1
+Unattended=0
+Retained=0
+ThreadPerObject=0
+MaxNumberOfThreads=1
+ThreadingModel=1
+DebugStartupOption=0
+
+[MS Transaction Server]
+AutoRefresh=1
+
+[pl_ThunderDll]
+set_chbUsePreLoader=0
+set_chbFullLoading=0
+set_chbDebugPreLoader=0
+set_chbLinkAsDLL=0
+set_chbExportSymbols=0
+set_chbBPSubMain=0
+set_chbBPCallThunRTMain=0
+set_chbBPPreLoader=0
+set_chbCallMyDllMain=1
+set_chbCompileDll=0
+set_txtEntryPoint=DllMain
+set_txtBaseAddress=11000000
+set_ctlExport=
+
+[pl_ThunderAsm]
+set_ASM_FixAsmListings=0
+
+[pl_ThunderIDE+]
+set_C_chbCColoring=1
+set_ASM_chbAsmColoring=1

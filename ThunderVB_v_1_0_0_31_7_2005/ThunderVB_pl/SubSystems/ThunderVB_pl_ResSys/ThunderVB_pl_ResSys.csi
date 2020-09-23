@@ -1,0 +1,13 @@
+[History]
+B0=ThunderVB_pl_ResSys/modArithComp/ReadBitsFromArray
+B1=ThunderVB_pl_ResSys/modArithComp/ReadASCFromArray
+B2=ThunderVB_pl_ResSys/modArithComp/AddToHistory
+B3=ThunderVB_pl_ResSys/modArithComp/DeCompress_LZSSLazy
+B4=ThunderVB_pl_ResSys/modArithComp
+B5=ThunderVB_pl_ResSys/modArithComp/Compress_LZSSLazy
+B6=ThunderVB_pl_ResSys/modResFileIO/Resource_NewFile
+B7=ThunderVB_pl_ResSys/modResFileIO/Resource_SaveHeader
+B8=ThunderVB_pl_ResSys/modResFileIO
+B9=ThunderVB_pl_ResSys/modResFileIO/LoadImage
+B10=ThunderVB_pl_ResSys/cDeclaresPub/Resource_LanguageIdToString
+B11=ThunderVB_pl_ResSys/cDeclaresPub/Resource_NewFile

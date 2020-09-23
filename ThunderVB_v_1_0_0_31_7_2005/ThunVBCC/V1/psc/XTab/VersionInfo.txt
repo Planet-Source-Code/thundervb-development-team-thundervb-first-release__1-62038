@@ -1,0 +1,53 @@
+Original version: 	1.0.0 
+Released on 	:	1st Oct 2004
+------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------
+Revisions:
+------------------------------------------------------------------------------------------
+
+Version 	:	1.1.1
+Released on	:	9th Jan 2005
+Changes		:
+		 1) Added a method called "CopyTabImagesFromImageList()" which can be called at
+	            runtime to copy images from an Image List or compatible control into the tabs
+                    (will find a better way to do so in future release(s)), Based
+                    on a request by: Mr. Mel Reyes
+BugFixes	:
+	         1) Bug Reported by: Bob Churchill
+	            When Multiple forms containing XTab are unloaded **sometimes** we get
+        	    a "Client Side Not Available" error.
+	            For more details about the error please contact me.
+	            Solution: This happens sometimes because the control gets a "GotFocus" event
+	            When the form is unloaded. This is strange behaviour and the Ambient object
+	            becomes unavailable. To solve this I had to check for Ambient Object before usin it.
+
+	            Thanks Bob for reporting the bug
+
+------------------------------------------------------------------------------------------
+Version 	:	1.1.0
+Released on	:	27th Oct 2004
+Changes:
+	         1) Added Icon Support for all the themes. Includes Mask Color and 
+		    other props.
+      		 2) Removed repeated themes.
+		 3) Modified Property Page for better UI.
+------------------------------------------------------------------------------------------
+Version 	:	1.0.1
+Released on	:	5th Oct 2004
+BugFixes	:
+	         1)	Bug Reported by: Maurice
+		        Creating an exe with the control in XP and using a Manifest file
+		        causes a General Protection Fault "after" exiting the application.
+		        This is not a problem with the control, but with the ComCtl32.dll
+		        version of XP. This problem occurs even if u have no code at all in
+		        the user cotrol. For more details about the error please contact me.
+			
+			Solution found from a article By: 
+			Steve McMahon <steve@vbaccelerator.com>
+		
+        		Thanks Maurice for reporting the bug
+	                And Thanks Steave for your wonderful article.
+
+------------------------------------------------------------------------------------------
+

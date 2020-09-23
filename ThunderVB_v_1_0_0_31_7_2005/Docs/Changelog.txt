@@ -1,0 +1,27 @@
+[           Legend:          ]
+[ + Added feature            ]
+[ * Improved/changed feature ]
+[ - Bug fixed (we hope)      ]
+[ ! Attention (Notes)        ]
+
+
+ChangeLog:
+
+ThunderVB beta 10 pre 2
+29/6/05:
+[*]Removed Scintilla from Masm/C error windows , now using CodeSense (ThunAsm;drkIIRaziel)
+[*]bug :"On asm/c error window , clicking on the error list and then pressing cancel makes the vb6 text cursor go crazy" was fixed (ThunAsm;drkIIRaziel)
+[*]Better asm / c coloring on error windows  (ThunAsm;drkIIRaziel)
+28/6/05
+[*]Plugin Interface related things are moved outside of the ThunderVB_pl code  , onto a new dll named ThunderVB_pl_interfaces_v1_0.dll . This way changes on the core will not affect plugin interface. ThunAsm,ThunDll and ThunIDE+ are updated to compile(ThunderVB_pl;drkIIRaziel)
+
+ThunderVB beta 10 pre 1 :
+
+26/6/05:
+[+] Start of this changelog :)
+
+[+]pure asm (asm code that replaces vb functions) (ThunAsm;drkIIRaziel)
+[+]Linker version is detected and OPT:REF/OPT:NOREF is added as needed (ThunderVB_pl;drkIIRaziel)
+[-]Fix a bug on ThunderAsm Asm/C error windows that leaded to crash (ThunAsm;drkIIRaziel ,thx RaedWulf for noticing) 
+[-]Minor fixes here and there on the Asm instering code from Assembled C file, now c functions can return Strings/Variants/Arrays/.. (ThunAsm;drkIIRaziel) 
+[*]Fixed logs filenames (since beta 9:1) (ThunderVB_pl;drkIIRaziel) 

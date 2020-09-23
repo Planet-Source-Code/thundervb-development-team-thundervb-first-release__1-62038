@@ -1,0 +1,8 @@
+Bugs to fix:
+When moving windows in front of vb's text editor the text gets corupted (rare) 
+Asm line does not get colored when it directly starts with a comment ,eg '#asm';test (allways) 
+IntelliAsm complete is not fired with all keys it should (allways) 
+IntelliAsm complete can hapen even if the statement on the curent line is finished(frequent) 
+
+Whish List:
+Release final version :D

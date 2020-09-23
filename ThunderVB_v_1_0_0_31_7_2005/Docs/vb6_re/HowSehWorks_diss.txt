@@ -1,0 +1,300 @@
+
+
+
+
+CONST	SEGMENT
+$Function_Info_Struct	
+	
+	DB	'0', 00H ;$Function_Info_Struct is pointer to the struct start
+	DB	014H, 00H
+	DB	00H, 00H, 00H, 00H
+	DB	00H, 00H, 00H, 00H
+	DB	00H, 00H, 00H, 00H
+	DD	FLAT:$Error_Handling_List_S23		;pointer to error handling list
+	DD	FLAT:$Code_Lines_List_S22		;pointer to code lines list
+
+;Code lines list
+$Code_Lines_List_S22	
+	
+	DB	0dH, 00H, 00H, 00H		;number of entrys [13 here,1-13,12 entrys]
+						;list with all lines ,labels to  line start
+	DD	FLAT:$Line_1_l25			;line 1
+	DD	FLAT:$Line_2_l26			;line 2
+	DD	FLAT:$Line_3_l29			;line 3
+	DD	FLAT:$Line_4_l32			;line 4
+	DD	FLAT:$Line_5_l33			;line 5
+	DD	FLAT:$Line_6_l35			;line 6
+	DD	FLAT:$Line_7_l36			;line 7
+	DD	FLAT:$Line_8_l37			;line 8
+	DD	FLAT:$Line_9_l39			;line 9
+	DD	FLAT:$Line_10_l40			;line 10
+	DD	FLAT:$Line_11_l41			;line 11
+	DD	FLAT:$Line_12_l42			;line 12
+	DD	FLAT:$Line_13_l43			;line 13
+						;13 lines on this sub , this list ends
+	ORG $+8					;??? I don’t know this directive
+
+
+;Error handling list
+$Error_Handling_List_S23	
+	
+	DB	03H, 00H, 00H, 00H		;number of entrys
+						;conists of entrys of 2 dwords
+						;(structure on c)
+
+						;struct ErrHandEntry
+						;{
+						;dword ErrorHanlderId			//number of this error hanlder
+						;void*  ErrorHanlderLabelAddress 	//address to jump on error
+						;}
+
+	DB	01H, 00H, 00H, 00H
+	DD	FLAT:$Error_Hanlder_1_L28
+
+	DB	02H, 00H, 00H, 00H
+	DD	FLAT:$Error_Hanlder_2_L34
+
+	DB	03H, 00H, 00H, 00H
+	DD	FLAT:$Error_Hanlder_3_L38
+
+CONST	ENDS
+
+
+;	COMDAT ?Main@Module1@@AAGXXZ
+text$1	SEGMENT
+_unnamed_var1$ = -36
+__$SEHRec$ = -32
+?Main@Module1@@AAGXXZ PROC NEAR				; Module1::Main, COMDAT
+
+; 6    : Public Sub Main()
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 24					; 00000018H
+	push	OFFSET FLAT:___vbaExceptHandler
+	mov	eax, DWORD PTR fs:__except_list
+	push	eax
+	mov	DWORD PTR fs:__except_list, esp
+	mov	eax, 56					; 00000038H
+	call	___vbaChkstk
+	push	ebx
+	push	esi
+	push	edi
+
+	mov	DWORD PTR __$SEHRec$[ebp+8], esp			;save esp
+	mov	DWORD PTR __$SEHRec$[ebp+12], OFFSET FLAT:$Function_Info_Struct		;pointer to sub info struct
+	mov	DWORD PTR __$SEHRec$[ebp+16], 0				;??
+	mov	DWORD PTR __$SEHRec$[ebp+20], 0				;??
+
+
+$Line_1_l25:
+	mov	DWORD PTR __$SEHRec$[ebp+28], 1		;set line 1 on seh header
+
+
+$Line_2_l26:
+
+; 7    : On Error GoTo err
+
+	mov	DWORD PTR __$SEHRec$[ebp+28], 2		;set line 2 on seh header
+	push	1
+	call	DWORD PTR __imp____vbaOnError		;set error handling to 
+								            ;1 (jump to eh#1)
+$Line_3_l29:
+
+; 8    :     i(0) = 100
+
+	mov	DWORD PTR __$SEHRec$[ebp+28], 3		;set line 3 on seh header
+	cmp	DWORD PTR _Module1, 0
+	je	SHORT $L50
+	mov	eax, DWORD PTR _Module1
+	cmp	WORD PTR [eax], 1
+	jne	SHORT $L50
+	mov	ecx, DWORD PTR _Module1
+	xor	edx, edx
+	sub	edx, DWORD PTR [ecx+20]
+	mov	DWORD PTR _unnamed_var1$[ebp], edx
+	mov	eax, DWORD PTR _Module1
+	mov	ecx, DWORD PTR _unnamed_var1$[ebp]
+	cmp	ecx, DWORD PTR [eax+16]
+	jae	SHORT $L51
+	mov	DWORD PTR -60+[ebp], 0
+	jmp	SHORT $L52
+$L51:
+	call	DWORD PTR __imp____vbaGenerateBoundsError
+	mov	DWORD PTR -60+[ebp], eax
+$L52:
+	mov	edx, DWORD PTR _unnamed_var1$[ebp]
+	shl	edx, 2
+	mov	DWORD PTR -64+[ebp], edx
+	jmp	SHORT $L53
+$L50:
+	call	DWORD PTR __imp____vbaGenerateBoundsError
+	mov	DWORD PTR -64+[ebp], eax
+$L53:
+	mov	eax, DWORD PTR _Module1
+	mov	ecx, DWORD PTR [eax+12]
+	mov	edx, DWORD PTR -64+[ebp]
+	mov	DWORD PTR [ecx+edx], 100		; 00000064H
+
+
+$Line_4_l32:
+$Error_Hanlder_1_L28:
+$Line_5_l33:
+
+; 9    : err:
+; 10   : 
+; 11   : On Error GoTo err2
+
+	mov	DWORD PTR __$SEHRec$[ebp+28], 5		;set line 5 on seh header
+	push	2					;Error handling mode 2 (2nd error handler)
+	call	DWORD PTR __imp____vbaOnError
+
+
+$Line_6_l35:
+
+; 12   :     i(2) = 100
+
+	mov	DWORD PTR __$SEHRec$[ebp+28], 6		;set line 6 on seh header
+	cmp	DWORD PTR _Module1, 0
+	je	SHORT $L54
+	mov	eax, DWORD PTR _Module1
+	cmp	WORD PTR [eax], 1
+	jne	SHORT $L54
+	mov	ecx, DWORD PTR _Module1
+	mov	edx, 2
+	sub	edx, DWORD PTR [ecx+20]
+	mov	DWORD PTR _unnamed_var1$[ebp], edx
+	mov	eax, DWORD PTR _Module1
+	mov	ecx, DWORD PTR _unnamed_var1$[ebp]
+	cmp	ecx, DWORD PTR [eax+16]
+	jae	SHORT $L55
+	mov	DWORD PTR -68+[ebp], 0
+	jmp	SHORT $L56
+$L55:
+	call	DWORD PTR __imp____vbaGenerateBoundsError
+	mov	DWORD PTR -68+[ebp], eax
+$L56:
+	mov	edx, DWORD PTR _unnamed_var1$[ebp]
+	shl	edx, 2
+	mov	DWORD PTR -72+[ebp], edx
+	jmp	SHORT $L57
+$L54:
+	call	DWORD PTR __imp____vbaGenerateBoundsError
+	mov	DWORD PTR -72+[ebp], eax
+$L57:
+	mov	eax, DWORD PTR _Module1
+	mov	ecx, DWORD PTR [eax+12]
+	mov	edx, DWORD PTR -72+[ebp]
+	mov	DWORD PTR [ecx+edx], 100		; 00000064H
+$Line_7_l36:
+$Error_Hanlder_2_L34:
+$Line_8_l37:
+
+; 13   : err2:
+; 14   : 
+; 15   : On Error GoTo err3
+
+	mov	DWORD PTR __$SEHRec$[ebp+28], 8		;set line 8 on seh header
+	push	3
+	call	DWORD PTR __imp____vbaOnError
+$Line_9_l39:
+
+; 16   :     i(2) = 100
+
+	mov	DWORD PTR __$SEHRec$[ebp+28], 9		;set line 9 on seh header
+	cmp	DWORD PTR _Module1, 0
+	je	SHORT $L58
+	mov	eax, DWORD PTR _Module1
+	cmp	WORD PTR [eax], 1
+	jne	SHORT $L58
+	mov	ecx, DWORD PTR _Module1
+	mov	edx, 2
+	sub	edx, DWORD PTR [ecx+20]
+	mov	DWORD PTR _unnamed_var1$[ebp], edx
+	mov	eax, DWORD PTR _Module1
+	mov	ecx, DWORD PTR _unnamed_var1$[ebp]
+	cmp	ecx, DWORD PTR [eax+16]
+	jae	SHORT $L59
+	mov	DWORD PTR -76+[ebp], 0
+	jmp	SHORT $L60
+$L59:
+	call	DWORD PTR __imp____vbaGenerateBoundsError
+	mov	DWORD PTR -76+[ebp], eax
+$L60:
+	mov	edx, DWORD PTR _unnamed_var1$[ebp]
+	shl	edx, 2
+	mov	DWORD PTR -80+[ebp], edx
+	jmp	SHORT $L61
+$L58:
+	call	DWORD PTR __imp____vbaGenerateBoundsError
+	mov	DWORD PTR -80+[ebp], eax
+$L61:
+	mov	eax, DWORD PTR _Module1
+	mov	ecx, DWORD PTR [eax+12]
+	mov	edx, DWORD PTR -80+[ebp]
+	mov	DWORD PTR [ecx+edx], 100		; 00000064H
+
+$Line_10_l40:
+$Error_Hanlder_3_L38:
+
+$Line_11_l41:
+
+; 17   : err3:
+; 18   : 
+; 19   : On Error Resume Next
+
+	mov	DWORD PTR __$SEHRec$[ebp+28], 11		;set line 11 on seh header
+	push	-1						;Error handlong mode : On error Resume Next
+	call	DWORD PTR __imp____vbaOnError
+$Line_12_l42:
+
+; 20   : i(2) = 100
+
+	mov	DWORD PTR __$SEHRec$[ebp+28], 12	;set line 12 on seh header
+	cmp	DWORD PTR _Module1, 0
+	je	SHORT $L62
+	mov	eax, DWORD PTR _Module1
+	cmp	WORD PTR [eax], 1
+	jne	SHORT $L62
+	mov	ecx, DWORD PTR _Module1
+	mov	edx, 2
+	sub	edx, DWORD PTR [ecx+20]
+	mov	DWORD PTR _unnamed_var1$[ebp], edx
+	mov	eax, DWORD PTR _Module1
+	mov	ecx, DWORD PTR _unnamed_var1$[ebp]
+	cmp	ecx, DWORD PTR [eax+16]
+	jae	SHORT $L63
+	mov	DWORD PTR -84+[ebp], 0
+	jmp	SHORT $L64
+$L63:
+	call	DWORD PTR __imp____vbaGenerateBoundsError
+	mov	DWORD PTR -84+[ebp], eax
+$L64:
+	mov	edx, DWORD PTR _unnamed_var1$[ebp]
+	shl	edx, 2
+	mov	DWORD PTR -88+[ebp], edx
+	jmp	SHORT $L65
+$L62:
+	call	DWORD PTR __imp____vbaGenerateBoundsError
+	mov	DWORD PTR -88+[ebp], eax
+$L65:
+	mov	eax, DWORD PTR _Module1
+	mov	ecx, DWORD PTR [eax+12]
+	mov	edx, DWORD PTR -88+[ebp]
+	mov	DWORD PTR [ecx+edx], 100		; 00000064H
+$Line_13_l43:
+
+; 22   : End Sub
+
+	call	DWORD PTR __imp____vbaExitProc
+	mov	ecx, DWORD PTR __$SEHRec$[ebp]
+	mov	DWORD PTR fs:__except_list, ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?Main@Module1@@AAGXXZ ENDP				; Module1::Main
+text$1	ENDS
+END
